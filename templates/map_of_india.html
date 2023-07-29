@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% with naukri='IndianMap/'|add:naukri timesjobs='IndianMap/'|add:timesjobs iimjobs='IndianMap/'|add:iimjobs %}
-  {% include naukri %}
+{% with timesjobs='IndianMap/'|add:timesjobs %}
   {% include timesjobs %}
-  {% include iimjobs %}
 {% endwith %}
 
 
