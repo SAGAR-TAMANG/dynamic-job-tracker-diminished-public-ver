@@ -163,3 +163,7 @@ PYTHONFILES_DIR = [
 PYTHON_ROOT = os.path.join(BASE_DIR, 'scripts')
 
 print('BASE DIR:', BASE_DIR)
+
+import gunicorn
+
+print ('GUNICORN VERSION: ', gunicorn.__version__)
