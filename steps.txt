@@ -142,3 +142,13 @@ Few Commands for pipenv:
 
 # Fresh Problem: 
 - Can not log into site/admin of django
+
+
+
+
+
+
+# Things to keep in mind during Deployment:
+- Set these in the settings.py:
+  - DEBUG = False
+  - ALLOWED_HOSTS = ['*']

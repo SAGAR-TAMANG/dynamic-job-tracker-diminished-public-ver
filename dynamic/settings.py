@@ -13,6 +13,9 @@ import os.path
 # import django_heroku
 from pathlib import Path
 
+import dj_database_url
+import environ
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -79,15 +82,28 @@ WSGI_APPLICATION = 'dynamic.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'tracker',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': 'localhost',
+#     }
+# }
+
+
+env = environ.Env()
+environ.Env.read_env()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tracker',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-    }
+    
+    'default': dj_database_url.parse(env('DATABASE_URL'))
+
 }
+
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 
 
 # Password validation
